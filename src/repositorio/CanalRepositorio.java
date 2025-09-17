@@ -7,5 +7,5 @@ import modelo.Canal;
 
 public class CanalRepositorio {
 	List <Canal> canales = new ArrayList <Canal>();
-
+	
 }
