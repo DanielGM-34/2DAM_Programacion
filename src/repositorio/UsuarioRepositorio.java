@@ -35,9 +35,26 @@ public class UsuarioRepositorio {
 
 	// Leer
 	public void buscarPorId(String id) {
-		System.out.println(usuarios.contains(id));
-		
+	    int i = 0;
+	    boolean encontrado = false;
+
+	    while (i < usuarios.size() && !encontrado) {
+	        Usuario usuario = usuarios.get(i);
+
+	        if (usuario.getIdUsuario().equals(id)) {
+	            System.out.println("✅ Usuario encontrado: " + usuario);
+	            encontrado = true;
+	        }
+
+	        i++;
+	    }
+
+	    if (!encontrado) {
+	        System.out.println("❌ Usuario con ID '" + id + "' no encontrado.");
+	    }
 	}
+
+
 
 	@Override
 	public String toString() {

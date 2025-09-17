@@ -18,9 +18,13 @@ public class UsuarioServicio {
 		super();
 		this.repo = new UsuarioRepositorio();
 	} 
-	
+	 
 	public void agregarUsuario(Usuario u) {
 		repo.agregarUsuario(u);
+	}
+	
+	public void buscarUsuarioPorId(String id) {
+		repo.buscarPorId(id);
 	}
 
 	@Override
