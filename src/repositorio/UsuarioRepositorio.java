@@ -44,6 +44,7 @@ public class UsuarioRepositorio {
 	        if (usuario.getIdUsuario().equals(id)) {
 	            System.out.println("✅ Usuario encontrado: " + usuario);
 	            encontrado = true;
+	            //prueba
 	        }
 
 	        i++;
