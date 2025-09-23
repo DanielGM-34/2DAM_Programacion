@@ -42,7 +42,7 @@ public class UsuarioRepositorio {
 	        Usuario usuario = usuarios.get(i);
 
 	        if (usuario.getIdUsuario().equals(id)) {
-	            System.out.println("✅ Usuario encontrado: " + usuario);
+	            System.out.println("Usuario encontrado: " + usuario);
 	            encontrado = true;
 	            //prueba
 	        }
@@ -51,7 +51,7 @@ public class UsuarioRepositorio {
 	    }
 
 	    if (!encontrado) {
-	        System.out.println("❌ Usuario con ID '" + id + "' no encontrado.");
+	        System.out.println("Usuario con ID '" + id + "' no encontrado.");
 	    }
 	}
 
