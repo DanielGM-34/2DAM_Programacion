@@ -11,7 +11,7 @@ public class Ejemplo {
 		System.out.println();
 		System.out.println(kernel.maxMemory());
 		System.out.println();
-
+ 
 		System.out.println(kernel.totalMemory());
 
 		// abrir un archivo notepadd
