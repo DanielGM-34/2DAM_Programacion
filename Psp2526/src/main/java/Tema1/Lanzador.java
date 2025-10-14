@@ -23,7 +23,7 @@ public class Lanzador {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    } 
 
     public void Compila() {
         // Compilar el archivo fuente y generar el .class en el directorio target
