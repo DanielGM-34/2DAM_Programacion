@@ -1,11 +1,8 @@
 package Tema1;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class LanzadorPython {
 	private final static String directorioGenerarClasses = "src/main/resources";
 	private final static String rutaSource = "src\\main\\java";
@@ -15,9 +12,10 @@ public class LanzadorPython {
 		System.out.println("Lanzador python");
 
 		LanzadorPython a = new LanzadorPython();
-		try {
+		try {  
 			a.crearPython("pepe.py", "print('Hello World')");
-		} catch (InterruptedException e) {
+			a.ejecutarJar("target/PspDam-0.0.1-SNAPSHOT.jar");
+		} catch (InterruptedException e) { 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -26,20 +24,26 @@ public class LanzadorPython {
 	public void crearPython(String nombreArchivo, String texto) throws InterruptedException {
 		try {
 			File archivoPython = new File(directorioGenerarClasses, nombreArchivo);
-			// archivoPython.getParentFile().mkdirs(); // Asegura que la carpeta exista
+			archivoPython.getParentFile().mkdirs(); // Asegura que la carpeta exista
 			FileWriter escribir = new FileWriter(archivoPython);
-			escribir.write(texto);
+			escribir.write(texto); 
 			escribir.close();
-
-			// Ejecutar el archivo Python
+ 
+			// Ejecutar el archivo Python 
 			ProcessBuilder pb = new ProcessBuilder("python", archivoPython.getAbsolutePath());
+			
 			pb.redirectErrorStream(true);
 			pb.inheritIO(); // Muestra salida directamente en consola
+			
 			pb.start().waitFor();
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public void ejecutarJar(String ruta) { 
+		ProcessBuilder pb = new ProcessBuilder("-jar ", ruta);
+		pb.redirectErrorStream(true);
+		pb.inheritIO(); // Muestra salida directamente en consola
+	}
 }

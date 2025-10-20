@@ -11,14 +11,15 @@ public class Lanzador {
         p.Compila();
         p.ejecutaProcesoCompila();
     } 
-   
+    
     public void ejecutaProcesoCompila() {
         // Ejecutar la clase compilada usando su nombre de clase, no la ruta al .java
-        String[] comando = { "java", "-cp", directorioGenerarClasses, "Tema1.Gestiona" };
+    	//doy dos argumentos hola y adios
+        String[] comando = { "java", "-cp", directorioGenerarClasses, "Tema1.Gestiona","feo","Adios" };
         ProcessBuilder pb = new ProcessBuilder(comando);
         try {
             pb.redirectErrorStream(true);
-            pb.inheritIO();
+            pb.inheritIO(); 
             pb.start();
         } catch (IOException e) {
             e.printStackTrace();
