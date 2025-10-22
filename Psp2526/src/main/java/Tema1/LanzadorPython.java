@@ -27,7 +27,7 @@ public class LanzadorPython {
 			archivoPython.getParentFile().mkdirs(); // Asegura que la carpeta exista
 			FileWriter escribir = new FileWriter(archivoPython);
 			escribir.write(texto); 
-			escribir.close();
+			escribir.close();  
  
 			// Ejecutar el archivo Python 
 			ProcessBuilder pb = new ProcessBuilder("python", archivoPython.getAbsolutePath());
@@ -38,7 +38,7 @@ public class LanzadorPython {
 			pb.start().waitFor();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 	
 	public void ejecutarJar(String ruta) { 
