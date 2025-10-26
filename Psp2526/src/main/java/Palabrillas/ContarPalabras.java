@@ -15,9 +15,11 @@ public class ContarPalabras {
 		String ruta = rutaResources + args[0];
 		String palabra = args[1];
 		ContarPalabras a = new ContarPalabras();
+		
+		  
 		try { 
-			System.out.println(a.contarPalabras(ruta, palabra));
-		} catch (FileNotFoundException e) {
+			System.out.println("La palabra a buscar en la ruta"+ruta+" es "+ palabra + " y aparece "+a.contarPalabras(ruta, palabra) + " veces.");
+		} catch (FileNotFoundException e) { 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
