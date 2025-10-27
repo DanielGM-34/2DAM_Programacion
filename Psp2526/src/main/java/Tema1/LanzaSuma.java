@@ -19,7 +19,7 @@ public class LanzaSuma {
 	    	//doy dos argumentos hola y adios
 	        String[] comando = { "java", "-cp", directorioGenerarClasses, ruta,"False","5" };
 	        ProcessBuilder pb = new ProcessBuilder(comando);
-	        try {
+	        try { 
 	            pb.redirectErrorStream(true);
 	            pb.inheritIO();
 	            pb.start();

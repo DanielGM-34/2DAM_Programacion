@@ -2,26 +2,17 @@ package Palabrillas;
 
 import java.io.IOException;
 
-public class LanzadorContadorPalabras {
+public class ModificaLanzador {
     private static final String rutamain = "src/main/java/";
     private static final String rutaResources = "src/main/resources/"; 
     private final static String directorioGenerarClasses = "target";
     private final static String rutaSource = "src/main/java/";
  
     public static void main(String[] args) { 
-        LanzadorContadorPalabras a = new LanzadorContadorPalabras();
-        a.compilaClase("Palabrillas/ContarPalabras.java");
+    	ModificaLanzador a = new ModificaLanzador();
+        a.compilaClase("Palabrillas/ContarPalabras.java"); 
         a.ejecutaClase("Palabrillas.ContarPalabras", "fichero.txt","java");
-        
-        String[] palabras= { "servicio", "hilo", "proceso", "multihilo", "concurrencia" };
-        for (int i = 0; i < palabras.length; i++) {
-			String palabra = palabras[i];
-	        a.ejecutaClase("Palabrillas.ContarPalabras", "fichero.txt",palabra);
-		}
-        
-    
-        
-        
+        System.out.println(); 
     } 
 
     public void ejecutaClase(String rutaFicheroJava, String nombreFichero, String palabraAbuscar) {

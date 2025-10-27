@@ -11,14 +11,16 @@ import java.util.Scanner;
 public class ContarPalabras {
 	private static final String rutaResources = "src/main/resources/";
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)  throws FileNotFoundException, IOException {
 		String ruta = rutaResources + args[0];
 		String palabra = args[1];
 		ContarPalabras a = new ContarPalabras();
 		
+		
 		  
 		try { 
 			System.out.println("La palabra a buscar en la ruta"+ruta+" es "+ palabra + " y aparece "+a.contarPalabras(ruta, palabra) + " veces.");
+			
 		} catch (FileNotFoundException e) { 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,7 +44,7 @@ public class ContarPalabras {
 		return numPalabras;
 	}
 
-	public void escribirFicheroLog(int nume, String rutaFichero) {
+	public void escribirFicheroLog(int nume, String rutaFichero) { 
 		PrintWriter out = null;
 		FileWriter ficheroSalida; 
 		File archivoTxt = new File(rutaFichero);
