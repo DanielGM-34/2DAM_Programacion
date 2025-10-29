@@ -15,7 +15,7 @@ public class LnazadorAnalisisTemperaturas {
 	private final static String directorioGenerarClasses = "target";
 	private final static String rutaSource = "src/main/java/";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {  
 
 		int[] umbrales = { 20, 5, 1, 40, 30, 35, 41,8,0 };
 		LnazadorAnalisisTemperaturas pepe = new LnazadorAnalisisTemperaturas(); // tu clase que ejecuta procesos
@@ -47,7 +47,7 @@ public class LnazadorAnalisisTemperaturas {
 
 	// TODO Auto-generated method stub
 
-	public void muestraTodosLosFicheros(int[] umbrales) {
+	public void muestraTodosLosFicheros(int[] umbrales) {  
 		System.out.println("Resultados:");
 		for (int tempeUmbral : umbrales) {
 			String rutaFIchero = rutaResources + tempeUmbral + ".txt";
@@ -76,8 +76,8 @@ public class LnazadorAnalisisTemperaturas {
 				in.close();
 			}
 		}
-	}
-
+	} 
+ 
 	public Process[] lanzarProcesos(int[] umbrales, LnazadorAnalisisTemperaturas pepe) {
 		Process[] procesos = new Process[umbrales.length];
 		for (int i = 0; i < umbrales.length; i++) {
@@ -85,7 +85,7 @@ public class LnazadorAnalisisTemperaturas {
 		}
 		return procesos;
 	}
-
+ 
 	public int[] esperarProcesos(Process[] procesos) {
 		int[] salidas = new int[procesos.length];
 		for (int i = 0; i < procesos.length; i++) {

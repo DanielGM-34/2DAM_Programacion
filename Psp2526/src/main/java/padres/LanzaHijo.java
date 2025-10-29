@@ -12,7 +12,10 @@ public class LanzaHijo {
 	public static void main(String[] args) {
 		LanzaHijo pepe = new LanzaHijo();
 		pepe.compilaClase("hijos/SysoNum.java");
-		pepe.ejecutaProcesoCompila22();		 
+		pepe.ejecutaProcesoCompila22();
+		
+		
+		
 		 
 		System.out.println();
 		
