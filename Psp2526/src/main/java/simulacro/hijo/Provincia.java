@@ -9,8 +9,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Provincia {
@@ -21,7 +19,7 @@ public class Provincia {
 
 		String nombreProvincia = args[0]; 
 		Provincia p = new Provincia();
-		System.out.println(p.devuelveNumTotalPedidos(rutaResources + "pedidos.txt"));
+		
 
 		
 		try {
@@ -36,7 +34,7 @@ public class Provincia {
 
 			System.out.println(p.devuelveNumProvincia(rutaResources + nombreProvincia + ".txt"));
 
-		} catch (IOException e) { 
+		} catch (IOException e) {  
 			System.out.println("Error al escribir el fichero: " + e.getMessage());
 
 		}
@@ -119,24 +117,20 @@ public class Provincia {
 		return provincia;
 	}
 
-	public int devuelveNumTotalPedidos(String ruta) {
-		int numPedidos = 0;
-		File archivo = new File(ruta);
-		try (FileReader fichero = new FileReader(archivo); Scanner in = new Scanner(fichero)) {
-			while (in.hasNextLine()) {
-				String lineas = in.nextLine();
-				String[] atributos = lineas.split("#");
-				String pedidos []= {atributos[0]};
-				numPedidos=pedidos.length;				
-			}
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		return numPedidos;
+	public int devuelveNumTotalPedidos(String ruta) throws FileNotFoundException {
+	    int numPedidos = 0;
+	    File archivo = new File(ruta);
+	    try (FileReader fichero = new FileReader(archivo); Scanner in = new Scanner(fichero)) {
+	        while (in.hasNextLine()) {
+	            in.nextLine(); // Leer la línea
+	            numPedidos++;  // Contar como un pedido
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	    System.out.println("Número total de pedidos: " + numPedidos);
+	    return numPedidos;
 	}
+
+
 }
