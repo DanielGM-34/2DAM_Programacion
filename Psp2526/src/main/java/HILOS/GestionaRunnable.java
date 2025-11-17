@@ -14,7 +14,7 @@ public class GestionaRunnable {
         // Añadimos los hilos hijos a la lista
         for (int i = 1; i <= 10; i++) {
             hilos.add(new Thread(new HiloRunnable("Hilo " + i)));
-        } 
+        }  
 
         // Iniciamos todos los hilos
         for (Thread hilo : hilos) {

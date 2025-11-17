@@ -17,7 +17,7 @@ public class MiHilo extends Thread {
 	}
 
 	@Override
-	public void run() {
+	public void run() { 
 		System.out.println(this.nombreHilo + this.getState());
 		try {
 			sleep(30000);
