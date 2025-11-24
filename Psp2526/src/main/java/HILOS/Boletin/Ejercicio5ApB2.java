@@ -24,7 +24,7 @@ public class Ejercicio5ApB2 {
             cui.setPriority(prioridad);
 
             System.out.println(cui.getName() + " prioridad: " + cui.getPriority());
-
+            
             cui.start();
         }
 
