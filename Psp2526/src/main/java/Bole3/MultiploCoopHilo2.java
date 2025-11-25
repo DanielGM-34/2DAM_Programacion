@@ -5,7 +5,7 @@ public class MultiploCoopHilo2 extends Thread{
 	
 
 	public MultiploCoopHilo2(MultiploCooperativos multiplo) {
-		super();
+		super(); 
 		this.multiplo = multiplo;
 	}
 
