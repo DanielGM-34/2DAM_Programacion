@@ -21,14 +21,14 @@ public class GestionaHilosEj1 {
         // Esperar a que terminen
         try {
             hA.join();
-            hE.join();
+            hE.join(); 
             hI.join();
             hO.join();
             hU.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+ 
         // Mostrar el total de vocales
         System.out.println("Total de vocales: " + CuentaVocalesEj1.getSumaVocales());
     }

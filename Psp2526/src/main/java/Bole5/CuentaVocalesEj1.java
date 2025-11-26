@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class CuentaVocalesEj1 extends Thread {
 	private char volcal;
 	private String ruta;
-	private static int sumaVocales;
+	private static int sumaVocales; 
 
 	public CuentaVocalesEj1(char volcal, String ruta) {
 		super();
@@ -44,10 +44,10 @@ public class CuentaVocalesEj1 extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		int numVeces = devuelveNumVocTexto();
-		sumaChar(numVeces);
-		System.out.println("La vocal '" + volcal + "' aparece " + numVeces + " veces.");
+		sumaVecesCadaVol(numVeces);
+		System.out.println("La vocal " + volcal + " aparece " + numVeces + " veces.");
 	}
- 
+
 	public synchronized int devuelveNumVocTexto() {
 		int numVeces = 0;
 		char vocal = Character.toLowerCase(this.volcal);
@@ -57,7 +57,6 @@ public class CuentaVocalesEj1 extends Thread {
 			Scanner leerEscaneador = new Scanner(ficheroALeer);
 
 			while (leerEscaneador.hasNext()) {
-
 				String palabra = leerEscaneador.next().toLowerCase();
 				for (int i = 0; i < palabra.length(); i++) {
 					if (palabra.charAt(i) == vocal) {
@@ -76,7 +75,7 @@ public class CuentaVocalesEj1 extends Thread {
 
 	}
 
-	public synchronized static void sumaChar(int n) {
+	public synchronized void sumaVecesCadaVol(int n) {
 		sumaVocales += n;
 
 	}
