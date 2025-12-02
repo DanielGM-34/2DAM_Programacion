@@ -3,15 +3,15 @@ package Bole5EjemploSemaforoDiapo;
 public class HilosSemaforoBinario implements Runnable {
 	   private final SemaforoBinario semaforo;
 	   private final Impresora impresora;
-	   private final String nombre;
+	   private final String nombre; 
 	   public HilosSemaforoBinario(SemaforoBinario semaforo, Impresora impresora, String nombre) {
 	       this.semaforo = semaforo;
-	       this.impresora = impresora;
-	       this.nombre = nombre;
+	       this.impresora = impresora; 
+	       this.nombre = nombre; 
 	   }
 	   @Override
 	   public void run() {
-	       try {
+	       try { 
 	           semaforo.adquirir();
 	           System.out.println(nombre + " ha adquirido el semáforo.");
 	           impresora.imprime(nombre);
