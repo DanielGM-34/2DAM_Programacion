@@ -25,5 +25,9 @@ public class CuentaVocales {
 	public void setNumTotalVoc(int numTotalVoc) {
 		this.numTotalVoc = numTotalVoc;
 	}
+	
+	synchronized void incrementaVocales() {
+		
+	}
 
 }

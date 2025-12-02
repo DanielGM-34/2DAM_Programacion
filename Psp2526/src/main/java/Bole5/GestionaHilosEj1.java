@@ -10,7 +10,8 @@ public class GestionaHilosEj1 {
         CuentaVocalesEj1 hI = new CuentaVocalesEj1('i', ruta);
         CuentaVocalesEj1 hO = new CuentaVocalesEj1('o', ruta);
         CuentaVocalesEj1 hU = new CuentaVocalesEj1('u', ruta);
-
+        
+        
         // Lanzar los hilos
         hA.start();
         hE.start();
