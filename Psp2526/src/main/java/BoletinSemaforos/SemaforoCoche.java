@@ -11,7 +11,7 @@ public class SemaforoCoche {
 	public synchronized void adquirir() throws InterruptedException {
 		while (surtidor == 0) {
 			wait();
-		}
+		} 
 		surtidor--;
 	}
 

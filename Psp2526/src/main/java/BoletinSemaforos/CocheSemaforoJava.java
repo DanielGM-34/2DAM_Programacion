@@ -1,28 +1,34 @@
 package BoletinSemaforos;
 
-public class Coche implements Runnable {
+import java.util.concurrent.Semaphore;
+
+public class CocheSemaforoJava implements Runnable {
 	private String nombre;
-	private SemaforoCoche semaforo;
-	public Coche(String nombre, SemaforoCoche semaforo) {
+	private Semaphore semaforo;
+
+	
+
+	public CocheSemaforoJava(String nombre, Semaphore semaforo) {
+		super();
 		this.nombre = nombre;
-		this.semaforo = semaforo; 
+		this.semaforo = semaforo;
 	}
  
 	@Override
-	public void run() { 
-		//mostrarMensajePago();
+	public void run() {
+		mostrarMensajePago();
 		mostrarMensajeAdquirido();
-		mostrarMensajeLiberado();
+		mostrarMensajeLiberado(); 
 	}
 
 	public void mostrarMensajeAdquirido() {
 		System.out.println(nombre + " espera para repostar...");
 		try {
-			semaforo.adquirir();
+			semaforo.acquire();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} // Intenta ocupar un surtidor
+		} 
 		System.out.println(nombre + " está repostando.");
 
 		try {
@@ -35,7 +41,7 @@ public class Coche implements Runnable {
 
 	public void mostrarMensajeLiberado() {
 		System.out.println(nombre + " ha terminado de repostar.");
-		semaforo.liberar(); 
+		semaforo.release(); 
 	}
 
 	public void mostrarMensajePago() {
@@ -45,7 +51,7 @@ public class Coche implements Runnable {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} // Simula 1 segundo de pago
+		} 
 		System.out.println(nombre + " ha terminado de pagar.");
 	}
 }
