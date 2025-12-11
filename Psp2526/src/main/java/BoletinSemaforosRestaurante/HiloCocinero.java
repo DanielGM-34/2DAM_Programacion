@@ -29,7 +29,7 @@ public class HiloCocinero implements Runnable {
 	}
 
 	@Override
-	public void run() {
+	public void run() { 
 		// TODO Auto-generated method stub
 		while (true) {
 			System.out.println("Está cocinando el tío.");

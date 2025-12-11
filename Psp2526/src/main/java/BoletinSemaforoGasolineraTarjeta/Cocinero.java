@@ -34,7 +34,7 @@ public class Cocinero implements Runnable{
 			e.printStackTrace();
 		} finally {
 			System.out.println(nombre + " Hay plato");
-			hayPlato.release(); 
+			hayPlato.release(3); 
 			
 		}
 		}

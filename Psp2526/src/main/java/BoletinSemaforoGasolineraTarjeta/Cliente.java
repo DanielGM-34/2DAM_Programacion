@@ -19,7 +19,6 @@ public class Cliente implements Runnable{
 	@Override
 	public void run() {
 		comer();
-		
 		}
 	
 
@@ -33,8 +32,8 @@ public class Cliente implements Runnable{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
-			
 			System.out.println(nombre + " He comido");
+			
 		}
 		}
 		
